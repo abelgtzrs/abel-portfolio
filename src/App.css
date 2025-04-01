@@ -1,0 +1,133 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  background-color: #0e0e0e;
+  color: #e6e6e6;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Main App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: #111;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-bottom: 2px solid #33ff33;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #33ff33;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+nav li a {
+  color: #e6e6e6;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+nav li a:hover,
+nav li.active a {
+  color: #33ff33;
+}
+
+/* Main Sections */
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Professional Button Style */
+button {
+  background-color: #33ff33;
+  color: #0e0e0e;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0e0e0e;
+  color: #33ff33;
+  border: 1px solid #33ff33;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: #e6e6e6;
+  border-top: 2px solid #33ff33;
+  margin-top: 1.5rem;
+}
+
+footer a {
+  color: #e6e6e6;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #33ff33;
+}
+
+/* Container Styles for Sections */
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #33ff33;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #e6e6e6;
+  margin-bottom: 2rem;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
