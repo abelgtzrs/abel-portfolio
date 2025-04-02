@@ -6,11 +6,13 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 import MatrixBackground from './components/MatrixBackground';
+import ThemeSwitcher from './components/ThemeSwitcher';
 
 function App() {
   return (
     <div className="app-container">
       <MatrixBackground />
+      <ThemeSwitcher />
       <Header />
       <Routes>
         <Route path="/" element={<About />} />

@@ -1,0 +1,86 @@
+.resume-section {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .resume-card {
+    background-color: #1a1a1a;
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 1rem;
+    box-shadow: 0 0 15px rgba(51, 255, 51, 0.1);
+  }
+  
+  .resume-intro {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #e6e6e6;
+  }
+  
+  .resume-download {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #0e0e0e;
+    border: 1px solid var(--accent-color);
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .resume-download:hover {
+    background-color: #0e0e0e;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+  }
+  
+  .resume-subtitle {
+    color: var(--accent-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  /* Skills Grid */
+  .skills-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.75rem 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .skills-grid li {
+    background: #111;
+    padding: 0.8rem;
+    border: 1px solid #333;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .skills-grid li:hover {
+    background-color: #2a2a2a;
+  }
+  
+  .skill-icon {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+  }
+  
+  .skill-name {
+    color: #e6e6e6;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  

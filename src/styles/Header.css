@@ -1,0 +1,40 @@
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .loader-mini-wrap {
+    transform: scale(0.5); /* Shrink loader to logo-size */
+    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title-text {
+    text-align: left;
+  }
+  
+  .main-title {
+    font-family:monospace;
+    font-size: 4rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-shadow: 0 0 10px var(--accent-color);
+    animation: pulse 2.5s infinite ease-in-out;
+    margin: 0;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #e6e6e6;
+    opacity: 0.75;
+    font-style: italic;
+    margin-top: 0.25rem;
+  }
+  

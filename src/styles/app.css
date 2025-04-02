@@ -1,184 +1,293 @@
 /* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  background-color: #0e0e0e;
+  color: #e6e6e6;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Main App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: #111;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+nav li a {
+  color: #e6e6e6;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+nav li a:hover,
+nav li.active a {
+  color: var(--accent-color);
+}
+
+/* Main Sections */
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Professional Button Style */
+button {
+  background-color: var(--accent-color);
+  color: #0e0e0e;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0e0e0e;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  opacity: 0.6;
+  color: #e6e6e6;
+  border-top: 2px solid var(--accent-color);
+  margin-top: 1.5rem;
+}
+
+footer a {
+  color: #e6e6e6;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: var(--accent-color);
+}
+
+/* Container Styles for Sections */
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #e6e6e6;
+  margin-bottom: 2rem;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
-  
-  /* Body and App Container */
-  body {
-    background-color: #0a0a0a;
-    color: #e6e6e6;
-    font-family: 'Courier New', Courier, monospace;
-    line-height: 1.6;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  /* Header */
-  header {
-    background: #111;
-    color: #33ff33;
-    padding: 1rem 2rem;
-    text-align: center;
-    border-bottom: 3px solid #33ff33;
-  }
-  
-  header h1 {
-    font-size: 2rem;
-    text-shadow: 0 0 15px #33ff33;
-  }
-  
-  /* Navigation */
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 0.5rem;
-  }
-  
-  nav li a {
-    color: #e6e6e6;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: color 0.2s ease-in-out;
-  }
-  
-  nav li a:hover,
-  nav li.active a {
-    color: #33ff33;
-    text-shadow: 0 0 8px #33ff33;
-  }
-  
-  /* Main Section */
-  section {
-    flex-grow: 1;
-    padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  /* Portfolio Projects Grid */
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  
-  /* Project Cards */
-  .project {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 0 10px #111;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px #33ff33;
-  }
-  
-  .project h3 {
-    color: #33ff33;
-    margin-bottom: 0.5rem;
-  }
-  
-  .project a {
-    color: #e6e6e6;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-  
-  .project a:hover {
-    color: #33ff33;
-  }
-  
-  /* Contact Form */
-  form {
-    background-color: #1a1a1a;
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid #333;
-    box-shadow: 0 0 15px #33ff33;
-  }
-  
-  form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #33ff33;
-  }
-  
-  form input,
-  form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    background-color: #0a0a0a;
-    color: #e6e6e6;
-    border: 1px solid #33ff33;
-    border-radius: 4px;
-  }
-  
-  form button {
-    background-color: #33ff33;
-    color: #0a0a0a;
-    padding: 0.7rem 1.5rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    font-weight: bold;
-  }
-  
-  form button:hover {
-    background-color: #0a0a0a;
-    color: #33ff33;
-    border: 1px solid #33ff33;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background: #111;
-    color: #33ff33;
-    border-top: 3px solid #33ff33;
-    margin-top: 1.5rem;
-  }
-  
-  footer a {
-    color: #e6e6e6;
-    margin: 0 1rem;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  
-  footer a:hover {
-    color: #33ff33;
-  }
-  
-  /* ASCII Glow for Abel Experience */
-  .ascii-title {
-    font-family: monospace;
-    color: #33ff33;
-    text-shadow: 0 0 10px #33ff33, 0 0 20px #0a0a0a;
-    margin-top: 1rem;
-    text-align: center;
-  }
-  /* Typing Effect */
-.typing-effect {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2rem;
-    color: #33ff33;
-    text-shadow: 0 0 10px #33ff33;
-    margin-bottom: 1.5rem;
-  }
-  
+}
+/* Logo Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #33ff33;
+  box-shadow: 0 0 10px #33ff33;
+}
+/* Project Cards */
+.project-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(51, 255, 51, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px var(--accent-color);
+}
+
+.project-header h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.8rem;
+}
+
+.project-links {
+  margin-top: 1rem;
+}
+
+.project-links a {
+  color: #e6e6e6;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s ease-in-out;
+}
+
+.project-links a:hover {
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+/* Contact Form */
+.contact-form {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  box-shadow: 0 0 20px rgba(51, 255, 51, 0.2);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  background-color: #0e0e0e;
+  color: #e6e6e6;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+}
+
+.contact-form button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Error Handling */
+.error {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+  display: block;
+}
+/* Theme Switcher Button */
+.theme-switcher {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  background-color: var(--accent-color);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Base Accent Variables (overridden by theme classes) */
+:root {
+  --accent-color: #33ff33;
+}
+
+.theme-green {
+  --accent-color: #33ff33;
+}
+
+.theme-blue {
+  --accent-color: #165da4;
+}
+
+.theme-purple {
+  --accent-color: #980ae0;
+}
+
+.theme-red {
+  --accent-color: #b50a0a;
+}
+
+/* Now use var(--accent-color) everywhere! */
+.section-title,
+header h1,
+nav li a:hover,
+nav li.active a,
+.project-header h3,
+.project-links a:hover,
+footer a:hover,
+.contact-form label,
+button:hover,
+.theme-switcher {
+  color: var(--accent-color);
+}
+
+.project-card,
+.contact-form,
+button,
+input,
+textarea {
+  border-color: var(--accent-color);
+}
+
+button,
+.theme-switcher {
+  background-color: var(--accent-color);
+  color: #0e0e0e;
+}
+
+button:hover,
+.theme-switcher:hover {
+  background-color: #0e0e0e;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}

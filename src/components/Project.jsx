@@ -1,29 +1,21 @@
-import { useState } from 'react';
-import '../styles/Project.css';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import '../styles/Portfolio.css';
 
-function Project({ title, deployed, github, description }) {
-  const [flipped, setFlipped] = useState(false);
-
+function Project({ title, tech, github, deployed }) {
   return (
-    <div
-      className={`project ${flipped ? 'flipped' : ''}`}
-      onClick={() => setFlipped(!flipped)}
-    >
-      <div className="project-inner">
-        <div className="project-front">
-          <h3>{title}</h3>
-          <p>
+    <div className="project-card">
+      <div className="project-card-content">
+        <h3>{title}</h3>
+        <p className="project-tech">{tech}</p>
+        <div className="project-links">
+          <a href={github} target="_blank" rel="noopener noreferrer">
+            <FaGithub /> GitHub
+          </a>
+          {deployed && (
             <a href={deployed} target="_blank" rel="noopener noreferrer">
-              View Deployed App
-            </a>{' '}
-            |{' '}
-            <a href={github} target="_blank" rel="noopener noreferrer">
-              GitHub
+              <FaExternalLinkAlt /> Live
             </a>
-          </p>
-        </div>
-        <div className="project-back">
-          <p>{description}</p>
+          )}
         </div>
       </div>
     </div>
