@@ -13,14 +13,14 @@ function About() {
             steps={[
               'Hello, I’m Abel...', 1500,
               'I’m a full-stack developer...', 1500,
-              'I hate coding, playing Elden Ring, and The Strokes...', 1500,
+              'I enjoy coding, playing Elden Ring, and The Strokes...', 1500,
               'Currently building The Abel Experience™...', 1500,
             ]}
             loop={Infinity}
             wrapper="span"
           />
         </p>
-        
+
         <div className="loader-container">
           <Loader />
         </div>
