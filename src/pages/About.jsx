@@ -1,4 +1,4 @@
-import Typical from 'react-typical';
+import { Typewriter } from 'react-simple-typewriter';
 import Loader from '../components/Loader.jsx';
 import '../styles/About.css';
 
@@ -9,16 +9,20 @@ function About() {
 
       <div className="ascii-border">
         <p className="typing-effect glitchy-text">
-          <Typical
-            steps={[
-              'Hello, I’m Abel...', 1500,
-              'I’m a full-stack developer...', 1500,
-              'I enjoy coding, playing Elden Ring, and The Strokes...', 1500,
-              'Currently building The Abel Experience™...', 1500,
-            ]}
-            loop={Infinity}
-            wrapper="span"
-          />
+        <Typewriter
+  words={[
+    'Hello, I’m Abel...',
+    'I’m a full-stack developer...',
+    'I hate coding, playing Elden Ring, and The Strokes...',
+    'Currently building The Abel Experience™...',
+  ]}
+  loop={0}
+  cursor
+  cursorStyle="_"
+  typeSpeed={70}
+  deleteSpeed={50}
+  delaySpeed={1000}
+/>
         </p>
 
         <div className="loader-container">
