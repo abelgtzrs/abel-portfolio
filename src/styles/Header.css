@@ -22,7 +22,7 @@
   
   .main-title {
     font-family:monospace;
-    font-size: 4rem;
+    font-size: 3.2rem;
     color: var(--accent-color);
     font-weight: 700;
     text-shadow: 0 0 10px var(--accent-color);
@@ -31,10 +31,11 @@
   }
   
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #e6e6e6;
     opacity: 0.75;
     font-style: italic;
     margin-top: 0.25rem;
   }
+  
   

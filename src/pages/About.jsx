@@ -2,6 +2,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import Loader from '../components/Loader.jsx';
 import '../styles/About.css';
 
+
 function About() {
   return (
     <section className="about-section chaotic">

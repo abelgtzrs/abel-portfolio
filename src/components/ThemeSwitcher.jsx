@@ -20,7 +20,7 @@ function ThemeSwitcher() {
 
   return (
     <button onClick={cycleTheme} className="theme-switcher">
-      Theme: {currentTheme.charAt(0).toUpperCase() + currentTheme.slice(1)}
+      {currentTheme.charAt(0).toUpperCase() + currentTheme.slice(1)}
     </button>
   );
 }
