@@ -30,7 +30,7 @@
   /* The glitchy Typical text */
   .typing-effect.glitchy-text {
     color: var(--accent-color);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bolder;
     animation: glitch 2.5s infinite;
     margin-bottom: 1.5rem;
@@ -38,7 +38,7 @@
   
   /* Bio text – keep it somewhat calm */
   .bio-text {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     margin-top: 1rem;
     color: #e6e6e6;
@@ -60,37 +60,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: scale(1.7);
-  }
-  
-  @media (max-width: 768px) {
-    .loader-container {
-      transform: scale(0.75);
-    }
+    transform: scale(clamp(0.5, 5vw, 5 rem));
+    transition: transform 0.3s ease;
   }
   
   
   /* GLITCH effect – shifting shadows, scale, color */
   /* @keyframes glitch {
     0% {
-      text-shadow: 1px 0 red, -1px 0 cyan;
+      text-shadow: 1px 0 rgb(255, 255, 255), -1px 0 rgb(255, 255, 255);
       transform: translate(0);
     }
     20% {
-      text-shadow: -2px 0 red, 2px 0 cyan;
+      text-shadow: -1px 0 rgb(255, 255, 255), 1px 0 rgb(255, 255, 255);
     }
     40% {
-      transform: translate(-2px, 2px);
+      transform: translate(-1px, 2px);
     }
     60% {
-      text-shadow: 2px 0 red, -2px 0 cyan;
+      text-shadow: 1px 0 rgb(255, 255, 255), -1px 0 rgb(255, 255, 255);
     }
     80% {
-      transform: translate(5px, -2px);
+      transform: translate(1px, -2px);
     }
     100% {
       transform: translate(0);
-      text-shadow: 1px 0 red, -1px 0 cyan;
+      text-shadow: 1px 0 rgb(255, 255, 255), -1px 0 rgb(255, 255, 255);
     }
-  }
-   */
+  } */

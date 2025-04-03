@@ -1,10 +1,19 @@
 import { Typewriter } from 'react-simple-typewriter';
 import Loader from '../components/Loader.jsx';
 import '../styles/About.css';
+import { motion } from 'framer-motion';
 
 
 function About() {
   return (
+    <motion.section
+    className="about-section"
+    initial={{ opacity: 0, y: 50 }}         // Start off invisible and pushed down
+    animate={{ opacity: 1, y: 0 }}          // Animate into view
+    exit={{ opacity: 0, y: -50 }}           // Animate out when page changes
+    transition={{ duration: 0.4, ease: 'easeInOut' }}
+    
+  >
     <section className="about-section chaotic">
       <h2 className="section-title glitchy-header">About Me</h2>
 
@@ -14,14 +23,14 @@ function About() {
   words={[
     'Hello, I’m Abel...',
     'I’m a full-stack developer...',
-    'I hate coding, playing Elden Ring, and The Strokes...',
+    'I enjoy coding, playing Elden Ring, and The Strokes...',
     'Currently building The Abel Experience™...',
   ]}
   loop={0}
   cursor
-  cursorStyle="_"
+  cursorStyle="|"
   typeSpeed={70}
-  deleteSpeed={50}
+  deleteSpeed={80}
   delaySpeed={1000}
 />
         </p>
@@ -36,6 +45,7 @@ function About() {
         </p>
       </div>
     </section>
+    </motion.section>
   );
 }
 
