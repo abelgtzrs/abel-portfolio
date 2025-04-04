@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -12,22 +13,32 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add validation here if desired
+    const newErrors = {};
+  
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+  
+    setErrors(newErrors);
+  
+    if (Object.keys(newErrors).length > 0) return;
+  
     setSubmitted(true);
-
-    // Optional: clear form after delay
+  
     setTimeout(() => {
       setFormData({ name: '', email: '', message: '' });
       setSubmitted(false);
+      setErrors({});
     }, 3000);
   };
+  
 
   return ( 
     <motion.section className="contact-section" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 1, ease: 'easeInOut' }}>
     <section className="contact-section">
       <h2 className="section-title">Contact Me</h2>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
+      <form className="contact-form" onSubmit={handleSubmit} noValidate>
         <input
           type="text"
           name="name"
@@ -36,6 +47,7 @@ function Contact() {
           onChange={handleChange}
           required
         />
+        {errors.name && <p className="input-error">{errors.name}</p>}
 
         <input
           type="email"
@@ -45,6 +57,7 @@ function Contact() {
           onChange={handleChange}
           required
         />
+        {errors.name && <p className="input-error">{errors.email}</p>}
 
         <textarea
           name="message"
@@ -54,6 +67,7 @@ function Contact() {
           rows="6"
           required
         />
+        {errors.name && <p className="input-error">{errors.message}</p>}
 
         <button type="submit">Send</button>
       </form>

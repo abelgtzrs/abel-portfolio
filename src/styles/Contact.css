@@ -54,6 +54,17 @@
     color: var(--accent-color);
     animation: fadeInUp 0.5s ease forwards;
   }
+  .input-error {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: -1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    padding-left: 0.5rem;
+    font-style: italic;
+    opacity: 0.85;
+  }
+  
   
   /* Optional feedback animation */
   @keyframes fadeInUp {
