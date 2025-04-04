@@ -6,14 +6,7 @@ import { motion } from 'framer-motion';
 
 function About() {
   return (
-    <motion.section
-    className="about-section"
-    initial={{ opacity: 0, y: 50 }}         // Start off invisible and pushed down
-    animate={{ opacity: 1, y: 0 }}          // Animate into view
-    exit={{ opacity: 0, y: -50 }}           // Animate out when page changes
-    transition={{ duration: 0.4, ease: 'easeInOut' }}
-    
-  >
+    <motion.section className="about-section" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 1, ease: 'easeInOut' }}>
     <section className="about-section chaotic">
       <h2 className="section-title glitchy-header">About Me</h2>
 

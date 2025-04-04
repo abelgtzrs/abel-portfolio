@@ -1,4 +1,5 @@
 import "../styles/Resume.css";
+import { motion } from 'framer-motion';
 import {
   FaHtml5,
   FaCss3Alt,
@@ -46,6 +47,7 @@ function Resume() {
   const devToolsSkills = skills.filter((skill) => skill.category === "dev-tools");
 
   return (
+    <motion.section className="resume-section" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 1, ease: 'easeInOut' }}>
     <section className="resume-section fade-in">
       <h2 className="section-title">Resume</h2>
 
@@ -89,6 +91,7 @@ function Resume() {
         </ul>
       </div>
     </section>
+    </motion.section>
   );
 }
 

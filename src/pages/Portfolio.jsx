@@ -1,23 +1,24 @@
 import Project from '../components/Project.jsx';
 import '../styles/Portfolio.css';
+import { motion } from 'framer-motion';
 
 function Portfolio() {
   const projects = [
     {
       title: 'Project Trippit',
       tech: 'HTML, JavaScript, CSS',
-      github: 'https://github.com/abelgutierrezdev/project-trippit',
-      deployed: 'https://abelgutierrezdev.github.io/project-trippit/',
+      github: 'https://github.com/abelgtzrs/Project-Trippit',
+      deployed: 'https://abelgtzrs.github.io/Project-Trippit/',
     },
     {
       title: 'Readme Generator',
       tech: 'Node.js',
-      github: 'https://github.com/abelgutierrezdev/readme-generator',
+      github: 'https://github.com/abelgtzrs/readmeGen',
     },
     {
       title: 'Vehicle Builder',
       tech: 'Node.js, TypeScript',
-      github: 'https://github.com/abelgutierrezdev/vehicle-builder',
+      github: 'https://github.com/abelgtzrs/Vehicle-Builder',
     },
     {
       title: 'Employee Tracker',
@@ -39,6 +40,7 @@ function Portfolio() {
   ];
 
   return (
+    <motion.section className="portfolio-section" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 1, ease: 'easeInOut' }}>
     <section className="portfolio-section fade-in">
       <h2 className="section-title">Portfolio</h2>
       <div className="portfolio-grid">
@@ -47,6 +49,7 @@ function Portfolio() {
         ))}
       </div>
     </section>
+    </motion.section>
   );
 }
 

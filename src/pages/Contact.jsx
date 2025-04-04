@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../styles/Contact.css';
+import { motion } from 'framer-motion';
 
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -21,7 +22,8 @@ function Contact() {
     }, 3000);
   };
 
-  return (
+  return ( 
+    <motion.section className="contact-section" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -50 }} transition={{ duration: 1, ease: 'easeInOut' }}>
     <section className="contact-section">
       <h2 className="section-title">Contact Me</h2>
 
@@ -60,6 +62,7 @@ function Contact() {
         <div className="form-feedback">Message sent! I’ll get back to you soon</div>
       )}
     </section>
+    </motion.section>
   );
 }
 
