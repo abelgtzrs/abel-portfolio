@@ -34,8 +34,8 @@ function Portfolio() {
     {
       title: 'The Abel Experience™',
       tech: 'React, Express, PostgreSQL',
-      github: 'https://github.com/abelgutierrezdev/the-abel-experience',
-      deployed: 'https://theabelexperience.netlify.app/',
+      github: 'https://github.com/abelgtzrs/theAeblExp3rience',
+      deployed: '#',
     },
   ];
 
