@@ -29,7 +29,7 @@ function MatrixBackground() {
       ctx.font = '15px monospace';
     
       for (let i = 0; i < drops.length; i++) {
-        const text = String.fromCharCode(36 + Math.random() * 94);
+        const text = String.fromCharCode(Math.random() * 94);
         ctx.fillText(text, i * 20, drops[i] * 15);
     
         if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {

@@ -1,71 +1,64 @@
 import { useState } from 'react';
+import '../styles/Contact.css';
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [errors, setErrors] = useState({});
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.includes('@')) newErrors.email = 'Valid email required';
-    if (!formData.message.trim()) newErrors.message = 'Message cannot be empty';
-    return newErrors;
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-    } else {
-      alert('Message sent successfully!');
+    // Add validation here if desired
+    setSubmitted(true);
+
+    // Optional: clear form after delay
+    setTimeout(() => {
       setFormData({ name: '', email: '', message: '' });
-      setErrors({});
-    }
+      setSubmitted(false);
+    }, 3000);
   };
 
   return (
-    <section className="fade-in">
+    <section className="contact-section">
       <h2 className="section-title">Contact Me</h2>
-      <form onSubmit={handleSubmit} className="contact-form">
-        <label htmlFor="name">Name:</label>
+
+      <form className="contact-form" onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
+          placeholder="Your Name"
           value={formData.name}
           onChange={handleChange}
+          required
         />
-        {errors.name && <span className="error">{errors.name}</span>}
 
-        <label htmlFor="email">Email:</label>
         <input
           type="email"
           name="email"
+          placeholder="Your Email"
           value={formData.email}
           onChange={handleChange}
+          required
         />
-        {errors.email && <span className="error">{errors.email}</span>}
 
-        <label htmlFor="message">Message:</label>
         <textarea
           name="message"
-          rows="5"
+          placeholder="Your Message"
           value={formData.message}
           onChange={handleChange}
+          rows="6"
+          required
         />
-        {errors.message && <span className="error">{errors.message}</span>}
 
-        <button type="submit">Send Message</button>
+        <button type="submit">Send</button>
       </form>
+
+      {submitted && (
+        <div className="form-feedback">Message sent! I’ll get back to you soon</div>
+      )}
     </section>
   );
 }
